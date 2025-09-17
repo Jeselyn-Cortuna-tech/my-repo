@@ -1,0 +1,9 @@
+﻿Environment Checklist
+
+[/] Python version checked (3.13.7)
+[/] Virtual environment created and activated (.\myenv\Scripts\Activate.ps1)
+[/] Django installed and version verified (5.2.6)
+[/] runserver executed successfully (Django welcome page visible)
+[/] Git repository initialized
+[/] Remote repository added and verified with `git remote -v`
+[/] Initial commit and push to remote completed
