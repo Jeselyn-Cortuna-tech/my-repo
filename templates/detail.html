@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ announcement.title }}{% endblock %}
+{% block content %}
+  <h1>{{ announcement.title }}</h1>
+  <p id="announcement-content">{{ announcement.content|truncatechars:200 }}</p>
+  <button id="toggle-btn">Read more</button>
+
+  <script>
+    const fullText = "{{ announcement.content|escapejs }}";
+    const contentEl = document.getElementById('announcement-content');
+    const btn = document.getElementById('toggle-btn');
+    const preview = fullText.length > 200 ? fullText.slice(0,200) + "..." : fullText;
+    let expanded = false;
+    btn.addEventListener('click', () => {
+      if (!expanded) {
+        contentEl.textContent = fullText;
+        btn.textContent = 'Show less';
+      } else {
+        contentEl.textContent = preview;
+        btn.textContent = 'Read more';
+      }
+      expanded = !expanded;
+    });
+  </script>
+{% endblock %}
